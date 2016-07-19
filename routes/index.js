@@ -8,6 +8,7 @@ const path = require('path')
 glob.sync('routes/**/*.js').forEach(function (fileName) {
   if (path.extname(fileName) === '.js' && (fileName !== 'routes/index.js')) {
     var fileNameFullyQualified = path.resolve(fileName)
+    console.log(fileNameFullyQualified)
     router.use(require(fileNameFullyQualified).routes())
   }
 })
