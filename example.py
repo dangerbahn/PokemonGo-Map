@@ -836,7 +836,9 @@ def get_pokemarkers():
         label = LABEL_TMPL.format(**pokemon)
         #  NOTE: `infobox` field doesn't render multiple line string in frontend
         label = label.replace('\n', '')
-
+        label = label.encode('utf-8')
+        pokemon_key = pokemon_key.encode('utf-8')
+        
         pokeMarkers.append({
             'type': 'pokemon',
             'key': pokemon_key,
