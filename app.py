@@ -834,7 +834,7 @@ def get_map():
         zoom='15')
     return fullmap
 
-
+main()
 # if __name__ == '__main__':
 # register_background_thread(initial_registration=True)
 # app.run(debug=True, threaded=True, host='0.0.0.0', port=5000)
