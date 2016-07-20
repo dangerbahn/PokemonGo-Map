@@ -50,7 +50,7 @@ GOOGLEMAPS_KEY = credentials.get('gmaps_key', None)
 PKMN_AUTH = 'ptc'
 PKMN_USER = 'dangerbahnhacks'
 PKMN_PASS = 'pkmn123456'
-PKMN_LOCATION = '2736 aldrich avenue south minneapolis MN 55408'
+PKMN_LOCATION = '44.952656,-93.2918997'
 PKMN_AVOID = 'pidgey,rattata,weedle,spearow,drowzee,zubat,kakuna,jynx,krabby,venonat,tauros'
 PKMN_SHOWGYM = True
 PKMN_SHOWSTOP = True
@@ -830,7 +830,7 @@ def get_map():
         lat=origin_lat,
         lng=origin_lon,
         markers=get_pokemarkers(),
-        zoom='15', )
+        zoom='15')
     return fullmap
 
 
