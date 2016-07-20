@@ -1,1 +1,1 @@
-web: gunicorn python example.py
+web: gunicorn pogo-home:example
