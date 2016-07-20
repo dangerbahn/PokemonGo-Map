@@ -836,5 +836,5 @@ def get_map():
 
 
 # if __name__ == '__main__':
-#     register_background_thread(initial_registration=True)
-#     app.run(debug=True, threaded=True, host='0.0.0.0', port=5000)
+register_background_thread(initial_registration=True)
+app.run(debug=True, threaded=True, host='0.0.0.0', port=5000)
