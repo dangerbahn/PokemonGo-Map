@@ -56,6 +56,7 @@ PKMN_LON = -93.2918997
 PKMN_AVOID = 'pidgey,rattata,weedle,spearow,drowzee,zubat,kakuna,jynx,krabby,venonat,tauros'
 PKMN_SHOWGYM = False
 PKMN_SHOWSTOP = False
+PKMN_STEP = 5
 
 SESSION = requests.session()
 SESSION.headers.update({'User-Agent': 'Niantic App'})
@@ -517,7 +518,7 @@ def main():
 
     clear_stale_pokemons()
 
-    steplimit = int(10)
+    steplimit = int(PKMN_STEP)
 
     ignore = []
     only = []
