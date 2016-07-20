@@ -54,8 +54,8 @@ PKMN_LOCATION = '44.952656,-93.2918997'
 PKMN_LAT = 44.952656
 PKMN_LON = -93.2918997
 PKMN_AVOID = 'pidgey,rattata,weedle,spearow,drowzee,zubat,kakuna,jynx,krabby,venonat,tauros'
-PKMN_SHOWGYM = True
-PKMN_SHOWSTOP = True
+PKMN_SHOWGYM = False
+PKMN_SHOWSTOP = False
 
 SESSION = requests.session()
 SESSION.headers.update({'User-Agent': 'Niantic App'})
@@ -835,6 +835,6 @@ def get_map():
     return fullmap
 
 
-# if __name__ == '__main__':
-# register_background_thread(initial_registration=True)
-# app.run(debug=True, threaded=True, host='0.0.0.0', port=5000)
+if __name__ == '__main__':
+    register_background_thread(initial_registration=True)
+    app.run(debug=True, threaded=True, host='0.0.0.0', port=5000)
