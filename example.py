@@ -438,38 +438,38 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '-a', '--auth_service', type=str.lower, help='Auth Service', default='ptc')
-    parser.add_argument('-u', '--username', help='Username', required=True)
-    parser.add_argument('-p', '--password', help='Password', required=False)
+    parser.add_argument('-u', '--username', help='Username', required=False, default='dangerbahnhacks')
+    parser.add_argument('-p', '--password', help='Password', required=False, default='pkmn123456')
     parser.add_argument(
-        '-l', '--location', type=parse_unicode, help='Location', required=True)
-    parser.add_argument('-st', '--step-limit', help='Steps', required=True)
+        '-l', '--location', type=parse_unicode, help='Location', required=False, default='2736 aldrich ave south minneapolis mn 55408')
+    parser.add_argument('-st', '--step-limit', help='Steps', required=False, default=10)
     group = parser.add_mutually_exclusive_group(required=False)
     group.add_argument(
-        '-i', '--ignore', help='Comma-separated list of Pokémon names or IDs to ignore')
+        '-i', '--ignore', help='Comma-separated list of Pokémon names or IDs to ignore', default='pidgey,rattata,weedle,spearow,drowzee,zubat,kakuna,jynx,krabby,venonat,tauros')
     group.add_argument(
         '-o', '--only', help='Comma-separated list of Pokémon names or IDs to search')
     parser.add_argument(
         "-ar",
         "--auto_refresh",
         help="Enables an autorefresh that behaves the same as a page reload. " +
-             "Needs an integer value for the amount of seconds")
+             "Needs an integer value for the amount of seconds", default='30')
     parser.add_argument(
         '-dp',
         '--display-pokestop',
         help='Display pokéstop',
         action='store_true',
-        default=False)
+        default=True)
     parser.add_argument(
         '-dg',
         '--display-gym',
         help='Display Gym',
         action='store_true',
-        default=False)
+        default=True)
     parser.add_argument(
         '-H',
         '--host',
         help='Set web server listening host',
-        default='127.0.0.1')
+        default='0.0.0.0')
     parser.add_argument(
         '-P',
         '--port',
@@ -496,7 +496,7 @@ def get_args():
     	"--ampm_clock",
     	help="Toggles the AM/PM clock for Pokemon timers",
     	action='store_true',
-    	default=False)
+    	default=True)
     parser.add_argument(
         '-d', '--debug', help='Debug Mode', action='store_true')
     parser.set_defaults(DEBUG=True)
@@ -838,7 +838,7 @@ def get_pokemarkers():
         label = label.replace('\n', '')
         label = label.encode('utf-8')
         pokemon_key = pokemon_key.encode('utf-8')
-        
+
         pokeMarkers.append({
             'type': 'pokemon',
             'key': pokemon_key,

@@ -1,1 +1,1 @@
-web: gunicorn <app>:example --debug -u dangerbahnhacks -p pkmn123456 -l "2736 aldrich ave south minneapolis mn 55408" -st 10 -H 0.0.0.0 -P 5001 -i pidgey,rattata,weedle,spearow,drowzee,zubat,kakuna,jynx,krabby,venonat,tauros -ar 30 --log-file -
+web: gunicorn <app>:example --log-file -
