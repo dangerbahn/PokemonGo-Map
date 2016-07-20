@@ -722,9 +722,9 @@ def fullmap():
         'example_fullmap.html', key=GOOGLEMAPS_KEY, fullmap=get_map(), auto_refresh=auto_refresh)
 
 
-@app.route('/next_loc')
+@app.route('/start')
 def next_loc():
-    global NEXT_LAT, NEXT_LONG
+    main()
 
     # lat = flask.request.args.get('lat', '')
     # lon = flask.request.args.get('lon', '')
@@ -836,5 +836,5 @@ def get_map():
 
 
 # if __name__ == '__main__':
-register_background_thread(initial_registration=True)
+# register_background_thread(initial_registration=True)
 # app.run(debug=True, threaded=True, host='0.0.0.0', port=5000)
