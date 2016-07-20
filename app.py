@@ -51,6 +51,8 @@ PKMN_AUTH = 'ptc'
 PKMN_USER = 'dangerbahnhacks'
 PKMN_PASS = 'pkmn123456'
 PKMN_LOCATION = '44.952656,-93.2918997'
+PKMN_LAT = '44.952656'
+PKMN_LON = '-93.2918997'
 PKMN_AVOID = 'pidgey,rattata,weedle,spearow,drowzee,zubat,kakuna,jynx,krabby,venonat,tauros'
 PKMN_SHOWGYM = True
 PKMN_SHOWSTOP = True
@@ -83,7 +85,7 @@ numbertoteam = {  # At least I'm pretty sure that's it. I could be wrong and the
     2: 'Valor',
     3: 'Instinct',
 }
-origin_lat, origin_lon = None, None
+origin_lat, origin_lon = PKMN_LAT, PKMN_LON
 is_ampm_clock = False
 
 # stuff for in-background search thread
@@ -174,19 +176,19 @@ def retrying_set_location(location_name):
 def set_location(location_name):
     geolocator = GoogleV3()
     prog = re.compile('^(\-?\d+(\.\d+)?),\s*(\-?\d+(\.\d+)?)$')
-    global origin_lat
-    global origin_lon
-    if prog.match(location_name):
-        local_lat, local_lng = [float(x) for x in location_name.split(",")]
-        alt = 0
-        origin_lat, origin_lon = local_lat, local_lng
-    else:
-        loc = geolocator.geocode(location_name)
-        origin_lat, origin_lon = local_lat, local_lng = loc.latitude, loc.longitude
-        alt = loc.altitude
-        print '[!] Your given location: {}'.format(loc.address.encode('utf-8'))
+    global origin_lat = float(PKMN_LAT)
+    global origin_lon = float(PKMN_LON)
+    # if prog.match(location_name):
+    #     local_lat, local_lng = [float(x) for x in location_name.split(",")]
+    #     alt = 0
+    #     origin_lat, origin_lon = local_lat, local_lng
+    # else:
+    #     loc = geolocator.geocode(location_name)
+    #     origin_lat, origin_lon = local_lat, local_lng = loc.latitude, loc.longitude
+    #     alt = loc.altitude
+    #     print '[!] Your given location: {}'.format(loc.address.encode('utf-8'))
 
-    print('[!] lat/long/alt: {} {} {}'.format(local_lat, local_lng, alt))
+    print('[!] lat/long/alt: {} {} {}'.format(local_lat, local_lng, 0))
     set_location_coords(local_lat, local_lng, alt)
 
 
