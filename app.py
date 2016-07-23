@@ -48,12 +48,56 @@ CLIENT_SIG = credentials.get('client_sig', None)
 GOOGLEMAPS_KEY = credentials.get('gmaps_key', None)
 
 PKMN_AUTH = 'ptc'
-PKMN_USER = 'dangerbahnhacks'
+PKMN_USER = 'dangerbahnhacks2'
 PKMN_PASS = 'pkmn123456'
-PKMN_LOCATION = '44.952656,-93.2918997'
-PKMN_LAT = 44.952656
-PKMN_LON = -93.2918997
-PKMN_AVOID = 'pidgey,rattata,weedle,spearow,drowzee,zubat,kakuna,jynx,krabby,venonat,tauros'
+# home
+PKMN_LOCATION = '44.952663, -93.289554'
+PKMN_LAT = 44.952663
+PKMN_LON = -93.289554
+
+# roy 44.982994, -93.283567
+
+# PKMN_LAT = 44.9764597
+# PKMN_LON = -93.283567
+
+
+
+# northrop 44.971405, -93.228594
+# PKMN_LAT = 44.971405
+# PKMN_LON = -93.228594
+
+PKMN_STEP = 10
+
+# red rocks
+# PKMN_LAT = 39.6654362
+# PKMN_LON = -105.2056789
+
+# lolla 41.875097, -87.618896
+# PKMN_LAT = 41.875097
+# PKMN_LON = -87.618896
+
+#ellie 44.922504, -93.247440
+# PKMN_LAT = 44.922504
+# PKMN_LON = -93.247440
+
+# matt 43.4923062,-70.4489742
+# 43.490322, -70.445873
+# PKMN_LAT = 43.490322
+# PKMN_LON = -70.445873
+
+# canada 48.537632,-71.647844
+# PKMN_LAT = 48.537632
+# PKMN_LON = -71.647844
+
+# st anthony 44.9834232,-93.2593489
+# PKMN_LAT = 44.9834232
+# PKMN_LON = -93.2593489
+
+# river falls 44.854058, -92.623382
+# PKMN_LAT = 44.854058
+# PKMN_LON = -92.623382
+
+PKMN_AVOID = 'pidgey,rattata,weedle,spearow,drowzee,zubat,kakuna,jynx,krabby,venonat,tauros,nidoran'
 PKMN_SHOWGYM = False
 PKMN_SHOWSTOP = False
 
@@ -517,7 +561,7 @@ def main():
 
     clear_stale_pokemons()
 
-    steplimit = int(10)
+    steplimit = int(PKMN_STEP)
 
     ignore = []
     only = []
