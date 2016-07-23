@@ -100,6 +100,7 @@ PKMN_STEP = 10
 PKMN_AVOID = 'pidgey,rattata,weedle,spearow,drowzee,zubat,kakuna,jynx,krabby,venonat,tauros,nidoran'
 PKMN_SHOWGYM = False
 PKMN_SHOWSTOP = False
+PKMN_STEP = 5
 
 SESSION = requests.session()
 SESSION.headers.update({'User-Agent': 'Niantic App'})
